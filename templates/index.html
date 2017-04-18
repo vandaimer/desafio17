@@ -4,18 +4,21 @@
 {% block content %}
 	<div class="container">
 		<table class="table table-striped">
-			<thead> <tr> <th>Nome</th> <th>Pedidos</th> <th>Telefone</th> </tr> </thead>
+			<thead> <tr> <th>Nome</th> <th>Pedidos</th><th>Valor gasto</th><th>Telefone</th> </tr> </thead>
 			<tbody>
-				<tr>
-					<td>AJAJA</td>
-					<td></td>
-					<td class="glyphicon glyphicon-phone"></td>
-				</tr>
-				<tr>
-					<td>AJAJA</td>
-					<td></td>
-					<td class="glyphicon glyphicon-phone"></td>
-				</tr>
+				{% for id, user in users.items() %}
+					<tr>
+						<th> {{ user.name }} </th>
+						{% if transactions[id] %}
+							<td>{{ transactions[id]['order'] }}</td>
+							<td>R$ {{ transactions[id]['amount'] }}</td>
+						{% else %}
+							<td> Nenhum produto adiquirido até o momento.</td>
+							<td>R$ 0.0</td>
+						{% endif %}
+						<td class="glyphicon glyphicon-phone"></td>
+					</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>
