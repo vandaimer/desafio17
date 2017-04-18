@@ -14,13 +14,13 @@
 			<thead> <tr> <th>Nome</th> <th>Pedidos</th><th>Valor gasto</th><th>+ Informações</th> </tr> </thead>
 			<tbody>
 				{% for id, user in users.items() %}
-					<tr>
+					<tr class="new-user">
 						<th class="name">{{ user.name }} </th>
 						{% if transactions[id] %}
 							<td class="order">{{ transactions[id]['order'] }}</td>
 							<td class="amount">R$ {{ transactions[id]['amount'] }}</td>
 						{% else %}
-							<td class="order"> Nenhum produto adiquirido até o momento.</td>
+							<td class="order">Nenhum produto adiquirido até o momento.</td>
 							<td class="amount">R$ 0.0</td>
 						{% endif %}
 						<input type="hidden" class="phone" value="{{ user.phone }}">
@@ -42,30 +42,26 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Nome</label>
 							<div class="col-sm-10">
-								<p class="form-control-static"></p>
+								<p class="form-control-static" id="nameModal"></p>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Items adiquiridos</label>
 							<div class="col-sm-10">
 								<p class="form-control-static"></p>
-								<ul>
-									<li>1</li>
-									<li>1</li>
-									<li>1</li>
-								</ul>
+								<ul id="listOrderModal"></ul>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Total</label>
 							<div class="col-sm-10">
-								<p class="form-control-static"></p>
+								<p class="form-control-static" id="amountModal"></p>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label">Telefone</label>
 							<div class="col-sm-10">
-								<p class="form-control-static"></p>
+								<p class="form-control-static" id="phoneModal"></p>
 							</div>
 						</div>
 					</form>
