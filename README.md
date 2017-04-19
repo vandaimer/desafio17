@@ -1,4 +1,4 @@
-# Aplicação wen para listar as transações de usuários
+# Aplicação web para listar as transações de usuários
 
 Explicação rápida
 - Le o arquivo **cvs** que contém os usuários.
