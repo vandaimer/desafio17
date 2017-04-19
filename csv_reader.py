@@ -8,17 +8,19 @@ class CSVReader(object):
     def __init__(self, file_path=None):
         if file_path is None:
             raise ValueError('The file path is require.')
-            #gera exception
         self.file_path = os.path.join(app.root_path, file_path)
         self.data = {}
         self.read_data()
 
     def read_data(self):
-        with open(self.file_path,'r') as f:
-            reader = csv.reader(f)
-            headers = next(reader)[1:]
-            for row in reader:
-                self.add_item(row)
+        try:
+            with open(self.file_path,'r') as f:
+                reader = csv.reader(f)
+                next(reader, None)
+                for row in reader:
+                    self.add_item(row)
+        except (FileNotFoundError, IOError):
+            print("File not found.")
 
     def get_data(self):
         return self.data
