@@ -1,13 +1,18 @@
-# Aplicação web para listar as transações de usuários
+# Web application to list user transactions
 
-Explicação rápida
-- Le o arquivo **cvs** que contém os usuários.
-- Le o arquivo **cvs** que contém as transações.
-- Organiza em estruturas de dados favoráveis para manipular os dados.
-- Exibe em uma página HTML os dados do usuários, os items adquiridos pelo mesmo, o valor total e um link para mais informações, onde mostra todos os dados acima e o telefone.
+# Quick explanation
+- Read a **cvs** file that has users;
+- Read a **cvs** file that has transactions;
+- Organize in a data structure that is favorable to manipulate it;
+- In a HTML page the show.
+    - The users data;
+    - The items purchased by each one;
+    - The total spend by each one;
+    - And a link to more informations.
+        - The link need show all of information above and the user phone.
 
-Ferramentas
-- Framework Flask (Framework Python).
-- HTML/CSS como linguagem de marcação.
-- Docker, para facilitar a distribuição da aplicação.
-- Make, para facilitar a geração e rodar as imagens docker.
+# Tools/Libraries
+- Flask Framework (Framework Python);
+- HTML/CSS as markup language;
+- Docker, to take easy the deploy/distribution;
+- Make, to take easy the docker image build and run the application.
